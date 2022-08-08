@@ -1,20 +1,18 @@
-import React from 'react'
-import Board from './components/Board'
+import React, {Component} from 'react'
 
-class Game extends React.Component {
-	render() {
+import Game from './components/Game'
+
+class App extends Component {
+	render () {
 		return (
-			<div className='game'>
+			<div>
 				<div className='game-board'>
-					<Board />
-				</div>
-				<div className='game-info'>
-					<div>{/* status */}</div>
-					<ol>{/* TODO */}</ol>
+					<Game />
 				</div>
 			</div>
 		)
+
 	}
 }
 
-export default Game
+export default App

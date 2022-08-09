@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
-import Board from './Board'
+import Puzzle from './Puzzle'
 
 class Game extends Component {
 	render() {
 		return (
 			<div className='game'>
 				<div className='game-board'>
-					<Board />
+					<Puzzle />
 				</div>
 				<div className='game-info'>
-					<div>{/* status */}</div>
+					<div>Game Info</div>
 					<ol>{/* TODO */}</ol>
 				</div>
 			</div>

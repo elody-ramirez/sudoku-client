@@ -13,6 +13,7 @@ const hasDuplicates = (arr, board) => {
 	return false
 }
 
+// This function ultimately checks if the game is complete by checking every row, column and square to make sure sure there are no duplicates
 const checkForWin = (board) => {
 	if (board.every((e) => e !== '') === false) {
 		return false

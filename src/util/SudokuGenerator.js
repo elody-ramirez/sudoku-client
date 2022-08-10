@@ -1,3 +1,4 @@
+// Incorporate lodash _.sample() for random choice later
 
 // This function is given an array of possible options and returns a random choice of those options
 // i.e. - (1,3,4,5,6,9) returns 4
@@ -57,4 +58,3 @@ function makePuzzle() {
 		}
 	}
 }
-console.log(makePuzzle())

@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
 
 import Square from './Square'
+import { Puzzles } from '../util/Puzzles.js'
 
 class Board extends Component {
 
 	renderSquare(i) {
-		return <Square />
+		return <Square value={i}/>
 	}
 
 	createBoard() {
 		let board = []
+		let puzzle = Puzzles[1]
 		let row
+		let count = 0
 		for (let i = 0; i < 9; i++) {
 			row = []
 			for (let j = 0; j < 9; j++) {
-				row.push(this.renderSquare(i))
+				row.push(this.renderSquare(puzzle[count][1]))
+				count++
 			}
 			board.push(<div key={i}>{row}</div>)
 		}
-		return board
+		console.log(puzzle)
+		return board	
 	}
 
 	render() {

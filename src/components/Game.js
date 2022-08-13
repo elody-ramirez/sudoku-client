@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-import Puzzle from './Puzzle'
+import Board from './Board'
 
 class Game extends Component {
 	render() {
 		return (
 			<div className='game'>
 				<div className='game-board'>
-					<Puzzle />
+					<Board />
 				</div>
 				<div className='game-info'>
 					<div>Game Info</div>

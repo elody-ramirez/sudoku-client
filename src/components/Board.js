@@ -6,8 +6,24 @@ import { Puzzles } from '../util/Puzzles.js'
 class Board extends Component {
 
 	renderSquare(i) {
-		return <Square value={i} onKeyDown={() => this.props.onKeyDown(i)}
-		/>
+		if (i === '') {
+			return (
+				<Square
+					initialValue={i}
+					onKeyDown={() => this.props.onKeyDown(i)}
+					changeable={true}
+				/>
+			)
+		} else {
+			return (
+				<Square
+					initialValue={i}
+					onKeyDown={() => this.props.onKeyDown(i)}
+					changeable={false}
+				/>
+			)
+		}
+		
 	}
 
 	createBoard() {

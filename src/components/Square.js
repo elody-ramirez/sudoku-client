@@ -10,12 +10,12 @@ class Square extends Component {
 	}
 
 	render() {
-		const {value} = this.props
+		const {value} = this.props.value
 		return (
 			<button
 				className='square'
 				onKeyDown={(e) => this.setState({ value: e.key})}>
-				{value}
+				{this.props.value}
 			</button>
 		)
 	}

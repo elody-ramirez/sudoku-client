@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const Square = ({ 
 	initialValue, 
@@ -8,13 +8,16 @@ const Square = ({
 }) => {
 	const [num, setNum] = useState(initialValue);
 
-	useEffect(() => {
-
-	}, [])
+	function numValidation(input) {
+		const regex = /[1-9]/g;
+		if (regex.test(input)) {
+			setNum(input)
+		} 
+	}
 
 	if (changeable) {
 		return (
-			<button className='square' onKeyDown={(e) => setNum(e.key)}>
+			<button className='square' onKeyDown={(e) => numValidation(e.key)}>
 				{num}
 			</button>
 		)
@@ -25,7 +28,6 @@ const Square = ({
 			</button>
 		)
 	}
-	
 }
 
 export default Square

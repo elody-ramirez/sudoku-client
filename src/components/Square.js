@@ -15,19 +15,14 @@ const Square = ({
 		} 
 	}
 
-	if (changeable) {
-		return (
-			<button className='square' onKeyDown={(e) => numValidation(e.key)}>
-				{num}
-			</button>
-		)
-	} else {
-		return (
-			<button className='square'>
-				{num}
-			</button>
-		)
-	}
+	return (
+		<button 
+			className='square' 
+			onKeyDown={ changeable ? (e) => numValidation(e.key) : ''}
+		>
+			{num}
+		</button>
+	)
 }
 
 export default Square

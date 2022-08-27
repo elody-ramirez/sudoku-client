@@ -4,24 +4,13 @@ import { Puzzles } from '../util/Puzzles.js'
 const Board = () => {
 
 	function renderSquare(i) {
-		if (i === '') {
-			return (
-				<Square
-					initialValue={i}
-					onKeyDown={() => this.props.onKeyDown(i)}
-					changeable={true}
-				/>
-			)
-		} else {
-			return (
-				<Square
-					initialValue={i}
-					onKeyDown={() => this.props.onKeyDown(i)}
-					changeable={false}
-				/>
-			)
-		}
-		
+		return (
+			<Square
+				initialValue={i}
+				onKeyDown={() => this.props.onKeyDown(i)}
+				changeable={ i === '' ? true : false}
+			/>
+		)
 	}
 
 	function createBoard() {

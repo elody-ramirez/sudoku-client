@@ -2,7 +2,7 @@ import Game from './Game'
 
 const App = () => {
 	return (
-		<div className='game-board'>
+		<div className='App'>
 			<Game />
 		</div>
 	)

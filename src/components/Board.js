@@ -1,39 +1,42 @@
+import { useState, useEffect } from 'react'
 import Square from './Square'
 import { Puzzles } from '../util/Puzzles.js'
 
 const Board = () => {
+	const [board, setBoard] = useState([])
 
-	function renderSquare(i) {
-		return (
-			<Square
-				initialValue={i}
-				onKeyDown={() => this.props.onKeyDown(i)}
-				changeable={ i === '' ? true : false}
-			/>
-		)
-	}
-
-	function createBoard() {
-		let board = []
+	useEffect(() => {
+		let b = []
 		let puzzle = Puzzles[1]
 		let row
 		let count = 0
 		for (let i = 0; i < 9; i++) {
 			row = []
 			for (let j = 0; j < 9; j++) {
-				row.push(renderSquare(puzzle[count][1]))
+				row.push(renderSquare(puzzle[count][1],count))
 				count++
 			}
-			board.push(<div key={i}>{row}</div>)
+			b.push(<div key={i}>{row}</div>)
 		}
-		console.log(puzzle)
-		return board	
+		setBoard(b)
+	}, [])	
+
+	function renderSquare(i,k) {
+		return (
+			<Square
+				key={k}
+				initialValue={i}
+				changeable={ i === '' ? true : false}
+			/>
+		)
 	}
 
 	return (
 		<div>
 			<h1> test </h1>
-			<div>{createBoard()}</div>
+			<div>
+				{board.map((square) => square)}
+			</div>
 		</div>
 	)
 }

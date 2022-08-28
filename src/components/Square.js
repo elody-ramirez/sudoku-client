@@ -2,11 +2,10 @@ import { useState } from 'react'
 
 const Square = ({ 
 	initialValue, 
-	changeable,
-	currentValue,
+	changeable
 
 }) => {
-	const [num, setNum] = useState(initialValue);
+	const [num, setNum] = useState(initialValue)
 
 	function numValidation(input) {
 		const regex = /[1-9]/g;
@@ -16,9 +15,9 @@ const Square = ({
 	}
 
 	return (
-		<button 
+		<button
 			className='square' 
-			onKeyDown={ changeable ? (e) => numValidation(e.key) : ''}
+			onKeyDown={ changeable ? (e) => numValidation(e.key) : numValidation()}
 		>
 			{num}
 		</button>

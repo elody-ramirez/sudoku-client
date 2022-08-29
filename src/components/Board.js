@@ -10,9 +10,18 @@ const Board = () => {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])	
 
+	const updateBoard = () => {
+		console.log('test')
+	}
+
 	const renderSquare = (i, k) => {
 		return (
-			<Square key={k} initialValue={i} changeable={i === '' ? true : false} />
+			<Square 
+				key={k} 
+				initialValue={i} 
+				changeable={i === '' ? true : false}
+				updateBoard={updateBoard}
+			/>
 		)
 	}
 	

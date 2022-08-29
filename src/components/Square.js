@@ -2,7 +2,8 @@ import { useState } from 'react'
 
 const Square = ({ 
 	initialValue, 
-	changeable
+	changeable,
+	updateBoard
 
 }) => {
 	const [num, setNum] = useState(initialValue)
@@ -11,6 +12,7 @@ const Square = ({
 		const regex = /[1-9]/g;
 		if (regex.test(input)) {
 			setNum(input)
+			updateBoard()
 		} 
 	}
 

@@ -7,7 +7,7 @@ const Square = ({
 }) => {
 	const [num, setNum] = useState(initialValue)
 
-	function numValidation(input) {
+	const numValidation = (input) => {
 		const regex = /[1-9]/g;
 		if (regex.test(input)) {
 			setNum(input)

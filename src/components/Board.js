@@ -17,7 +17,8 @@ const Board = () => {
 	const renderSquare = (i, k) => {
 		return (
 			<Square 
-				key={k} 
+				key={k}
+				squareID={'square' + k} 
 				initialValue={i} 
 				changeable={i === '' ? true : false}
 				updateBoard={updateBoard}

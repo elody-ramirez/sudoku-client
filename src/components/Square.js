@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 const Square = ({ 
+	squareID,
 	initialValue, 
 	changeable,
 	updateBoard

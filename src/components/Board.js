@@ -10,8 +10,10 @@ const Board = () => {
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])	
 
-	const updateBoard = () => {
-		console.log('test')
+	const updateBoard = (squareID, value) => {
+		console.log(board)
+		// console.log(board[0])
+		// console.log(board[1])
 	}
 
 	const renderSquare = (i, k) => {
@@ -45,7 +47,7 @@ const Board = () => {
 	return (
 		<div>
 			<h1> test </h1>
-			<div>
+			<div className='board'>
 				{board.map((square) => square)}
 			</div>
 		</div>

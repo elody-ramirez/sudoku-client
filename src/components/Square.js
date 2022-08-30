@@ -13,7 +13,7 @@ const Square = ({
 		const regex = /[1-9]/g;
 		if (regex.test(input)) {
 			setNum(input)
-			updateBoard()
+			updateBoard(squareID, input)
 		} 
 	}
 

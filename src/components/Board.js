@@ -11,9 +11,11 @@ const Board = () => {
 	}, [])	
 
 	const updateBoard = (squareID, value) => {
-		console.log(board)
-		// console.log(board[0])
-		// console.log(board[1])
+		// const newBoard = board.map((row) => row.map((square) => 
+		// 	square.id === squareID ? alert(square) : square
+		// ))
+		console.log('test')
+
 	}
 
 	const renderSquare = (i, k) => {
@@ -29,26 +31,39 @@ const Board = () => {
 	}
 	
 	const setUpBoard = () => {
-		let b = []
-		let puzzle = Puzzles[1]
-		let row
-		let count = 0
-		for (let i = 0; i < 9; i++) {
-			row = []
-			for (let j = 0; j < 9; j++) {
-				row.push(renderSquare(puzzle[count][1], count))
-				count++
-			}
-			b.push(<div key={i}>{row}</div>)
+		const arr = Puzzles[1]
+		const rows = 9
+		const cols = 9
+		const result = new Array(rows)
+		for (let row = 0; row < rows; row++) {
+			result[row] = new Array(cols)
 		}
-		setBoard(b)
+		for (let row = 0; row < rows; row++) {
+			for (let col = 0; col < cols; col++) {
+				result[row][col] = arr[row * cols + col][1]
+			}
+		}
+		setBoard(result)
+		return result
 	}
 
 	return (
 		<div>
 			<h1> test </h1>
 			<div className='board'>
-				{board.map((square) => square)}
+				{board.map((row, rowIndex) => (
+					<div key={row}>
+						{row.map((value, colIndex) => (
+							<Square
+								key={rowIndex * 9 + (colIndex + 1)}
+								squareID={'square' + (rowIndex * 9 + (colIndex + 1))}
+								initialValue={value}
+								changeable={value === '' ? true : false}
+								updateBoard={updateBoard}
+							/>
+						))}
+					</div>
+				))}
 			</div>
 		</div>
 	)

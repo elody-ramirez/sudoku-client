@@ -9,18 +9,20 @@ const Square = ({
 }) => {
 	const [num, setNum] = useState(initialValue)
 
-	const numValidation = (input) => {
+	const numValidation = (e) => {
+		const input = e.key
 		const regex = /[1-9]/g;
 		if (regex.test(input)) {
 			setNum(input)
-			updateBoard(squareID, input)
+			updateBoard(e.target, input)
 		} 
 	}
 
 	return (
 		<button
+			id={squareID}
 			className='square' 
-			onKeyDown={ changeable ? (e) => numValidation(e.key) : null}
+			onKeyDown={ changeable ? (e) => numValidation(e) : null}
 		>
 			{num}
 		</button>

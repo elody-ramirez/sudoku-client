@@ -36,7 +36,7 @@ const Board = () => {
 
 	return (
 		<div>
-			<h1> test </h1>
+			<h1> Sudoku! </h1>
 			<div className='board'>
 				{board.map((row, rowIndex) => (
 					<div key={row}>

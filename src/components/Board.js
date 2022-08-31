@@ -17,18 +17,6 @@ const Board = () => {
 		console.log('test')
 
 	}
-
-	const renderSquare = (i, k) => {
-		return (
-			<Square 
-				key={k}
-				squareID={'square' + k} 
-				initialValue={i} 
-				changeable={i === '' ? true : false}
-				updateBoard={updateBoard}
-			/>
-		)
-	}
 	
 	const setUpBoard = () => {
 		const arr = Puzzles[1]

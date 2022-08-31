@@ -41,8 +41,8 @@ const Board = () => {
 							<Square
 								key={rowIndex * 9 + (colIndex + 1)}
 								squareID={(rowIndex * 9 + (colIndex + 1)) - 1}
-								initialValue={value !== 0 ? value : null}
-								changeable={value !== 0 ? true : false}
+								initialValue={value}
+								changeable={value === '' ? true : false}
 								updateBoard={updateBoard}
 							/>
 						))}

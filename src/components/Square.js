@@ -20,7 +20,7 @@ const Square = ({
 	return (
 		<button
 			className='square' 
-			onKeyDown={ changeable ? (e) => numValidation(e.key) : numValidation()}
+			onKeyDown={ changeable ? (e) => numValidation(e.key) : null}
 		>
 			{num}
 		</button>

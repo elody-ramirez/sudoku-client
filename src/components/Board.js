@@ -19,7 +19,7 @@ const Board = () => {
 	}
 	
 	const setUpBoard = () => {
-		const arr = Puzzles[1]
+		const puzzle = Puzzles[1]
 		const rows = 9
 		const cols = 9
 		const result = new Array(rows)
@@ -28,11 +28,10 @@ const Board = () => {
 		}
 		for (let row = 0; row < rows; row++) {
 			for (let col = 0; col < cols; col++) {
-				result[row][col] = arr[row * cols + col][1]
+				result[row][col] = puzzle[row * cols + col][1]
 			}
 		}
 		setBoard(result)
-		return result
 	}
 
 	return (
